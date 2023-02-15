@@ -1,6 +1,6 @@
 # profile
 
-<a href='/minLaoGe/ChatGPT-Werobot-Flask/edit/main/README_ZH.md'>中文文档 </a>
+<a href='/README_ZH.md'>中文文档 </a>
 
 This is a opensource project base on openAI_demo(https://github.com/openai/openai-quickstart-python.git). It integer Werbot and flask, It's easy to use If you are in China. Just  you need to get a vpn soft, and install it on your server.
 
