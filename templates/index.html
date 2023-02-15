@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+ <script src="{{ url_for('static', filename='jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h3>TRANSLATION</h3>
+  <div class="form" >
+      <textarea  id="text" name="text" placeholder="Enter your essay" ></textarea>
+    <input type="text" id="lang" name="lang" placeholder="Enter target language" />
+    <input type="submit" onclick="beginTranslation()"value="Begin Translation" />
+  </div>
+
+  <div class="result"> </div>
+</body>

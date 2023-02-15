@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Your Ture Site</title>
+    <script src="{{ url_for('static', filename='jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h3>CHAT WITH OPENAI</h3>
+  <div class="form" >
+        <input  type="text" id="text" name="text" placeholder="Enter what your want to ask" />
+        <input id="submit" type="submit" onclick="beginAsk()" value="Begin ask" />
+      <span id="tishi" hidden style="color: red">请等待服务器响应........</span>
+  </div>
+   <div id="history" >
+
+
+   </div>
+  <div id="result" class="result"> </div>
+</body>

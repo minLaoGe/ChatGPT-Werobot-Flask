@@ -1,0 +1,35 @@
+wx:
+  schdule:
+    time: 1200
+
+  # wx appId
+  appId:
+  # wx appSecreate
+  appSecreate:
+  # you shouldn't change this configuration
+  accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token
+  # the wx token
+  token:
+  # the wx aes secret
+  aesSecret: CCjQFoCmGmzEmcKpOOC4W27RbG232thjl4eNGHBirYy
+  maxResponseToken: 1000
+  temputure: 0.2 #相似度
+  # the id of your pic
+  MyQRId:
+
+openAi:
+  # openAI token
+  appId:
+  # openAI model
+  model: text-davinci-003  #text-ada-001 最差 # text-babbage-001 第二 # text-davinci-003 最智能。
+  url: https://api.openai.com/v1/completions
+  # 微信消息响应最大事件
+  wxRequestTimeout: 4
+  #预留
+  webRequestTimeout: 60
+
+
+web:
+  mobile:
+    # 如果微信响应时间超过最大值，则会返回这个地址给用户
+    url: http://baidu:3000/api/

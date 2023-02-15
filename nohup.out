@@ -1,0 +1,794 @@
+Traceback (most recent call last):
+  File "app.py", line 3, in <module>
+    import openai
+ModuleNotFoundError: No module named 'openai'
+Traceback (most recent call last):
+  File "app.py", line 4, in <module>
+    from flask import Flask, redirect, render_template, request, url_for,jsonify
+ModuleNotFoundError: No module named 'flask'
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.0.4.12:3000/ (Press CTRL+C to quit)
+115.206.67.249 - - [10/Feb/2023 01:00:45] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:00:45] "GET /static/main.css HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:00:45] "GET /static/script.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:00:45] "GET /static/dog.png HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:00:45] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+[2023-02-10 01:00:54,887] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 696, in urlopen
+    self._prepare_proxy(conn)
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 964, in _prepare_proxy
+    conn.connect()
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 358, in connect
+    conn = self._new_conn()
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f675f2342e0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/completions (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f675f2342e0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 292, in request_raw
+    result = _thread_context.session.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/completions (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f675f2342e0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 31, in index1
+    response = openai.Completion.create(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/completion.py", line 31, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 100, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 113, in request
+    result = self.request_raw(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 302, in request_raw
+    raise error.APIConnectionError("Error communicating with OpenAI") from e
+openai.error.APIConnectionError: Error communicating with OpenAI
+115.206.67.249 - - [10/Feb/2023 01:00:54] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+115.206.67.249 - - [10/Feb/2023 01:00:59] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+[2023-02-10 01:01:03,181] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 696, in urlopen
+    self._prepare_proxy(conn)
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 964, in _prepare_proxy
+    conn.connect()
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 358, in connect
+    conn = self._new_conn()
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f675eeffc70>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/local/python38/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/completions (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f675eeffc70>: Failed to establish a new connection: [Errno 111] Connection refused')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 292, in request_raw
+    result = _thread_context.session.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/requests/adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/completions (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f675eeffc70>: Failed to establish a new connection: [Errno 111] Connection refused')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 31, in index1
+    response = openai.Completion.create(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/completion.py", line 31, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 100, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 113, in request
+    result = self.request_raw(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 302, in request_raw
+    raise error.APIConnectionError("Error communicating with OpenAI") from e
+openai.error.APIConnectionError: Error communicating with OpenAI
+115.206.67.249 - - [10/Feb/2023 01:01:03] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+115.206.67.249 - - [10/Feb/2023 01:03:17] "POST / HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:03:52] "GET / HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:03:53] "GET /static/main.css HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:03:53] "GET /static/script.js HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:03:53] "GET /static/dog.png HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:03:53] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+180.163.29.79 - - [10/Feb/2023 01:04:52] "GET / HTTP/1.1" 200 -
+180.163.29.79 - - [10/Feb/2023 01:05:06] "GET /static/script.js HTTP/1.1" 200 -
+1.13.139.204 - - [10/Feb/2023 01:07:08] "GET /static/dog.png HTTP/1.1" 200 -
+198.235.24.18 - - [10/Feb/2023 01:11:13] "GET / HTTP/1.1" 200 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.0.4.12:3000/ (Press CTRL+C to quit)
+115.194.115.207 - - [10/Feb/2023 01:21:57] "GET / HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:21:58] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.194.115.207 - - [10/Feb/2023 01:21:58] "GET /static/script.js HTTP/1.1" 200 -
+115.194.115.207 - - [10/Feb/2023 01:21:58] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.194.115.207 - - [10/Feb/2023 01:21:58] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.194.115.207 - - [10/Feb/2023 01:22:16] "POST / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:27:07] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:27:07] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 01:27:07] "GET /static/script.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 01:27:07] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 01:28:09] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+[2023-02-10 01:30:29,459] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 30, in index3
+    abc = request.json['yourWant']
+KeyError: 'yourWant'
+115.206.67.249 - - [10/Feb/2023 01:30:29] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+59.83.208.105 - - [10/Feb/2023 01:44:21] "GET / HTTP/1.1" 200 -
+180.101.244.16 - - [10/Feb/2023 01:44:21] "GET / HTTP/1.1" 200 -
+59.83.208.107 - - [10/Feb/2023 01:44:21] "GET / HTTP/1.1" 200 -
+180.101.245.253 - - [10/Feb/2023 01:44:21] "GET /static/script.js HTTP/1.1" 200 -
+59.83.208.107 - - [10/Feb/2023 01:44:21] "GET /static/main.css HTTP/1.1" 200 -
+180.101.245.253 - - [10/Feb/2023 01:44:21] "GET /static/dog.png HTTP/1.1" 200 -
+107.170.225.12 - - [10/Feb/2023 02:10:46] "GET / HTTP/1.1" 200 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.0.4.12:3000/ (Press CTRL+C to quit)
+115.206.67.249 - - [10/Feb/2023 02:19:55] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:19:55] "GET /static/script.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:19:55] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:19:55] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:20:30] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:21:11] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:21:11] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:21:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:21:11] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:21:11] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.0.4.12:3000/ (Press CTRL+C to quit)
+115.206.67.249 - - [10/Feb/2023 02:25:21] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:25:21] "GET /static/jquery.min.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:25:21] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:25:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:25:21] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:25:21] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.206.67.249 - - [10/Feb/2023 02:25:31] "POST / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:36] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET / HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET /static/jquery.min.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET /static/main.css HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET /static/script.js HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET /static/dog.png HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:31:52] "GET /static/dog.png HTTP/1.1" 200 -
+115.206.67.249 - - [10/Feb/2023 02:32:09] "POST / HTTP/1.1" 200 -
+1.13.139.243 - - [10/Feb/2023 04:12:41] "GET /static/dog.png HTTP/1.1" 200 -
+89.248.165.206 - - [10/Feb/2023 06:10:16] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.206 - - [10/Feb/2023 06:10:16] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+89.248.165.107 - - [10/Feb/2023 06:21:36] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.107 - - [10/Feb/2023 06:21:36] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+89.248.165.39 - - [10/Feb/2023 06:27:29] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.39 - - [10/Feb/2023 06:27:29] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+115.206.67.249 - - [10/Feb/2023 07:41:33] "GET / HTTP/1.1" 200 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /phpmyadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /phpmy/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /pmd/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /pm/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /admin/pma/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /my/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /admin/mysql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /admin/phpmyadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /mysqladmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /phpadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /myadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /WempServer/phpMyAdmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:37] "[33mGET /data/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /mysql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /adminsql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpsql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /mysql1/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpmyadmin888/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpmyadmin0/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpmyadmin1/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpsqladmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /phpmysql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /sqladmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /php_MyAdmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /php_sqladmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /php_mysql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /php_adminsql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /php_sql/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:38] "[33mGET /pma/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /pmb/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /sqlmyadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /phpmyadmin1/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /phpmyadmin666/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /xampp/phpmyadmin/index.php HTTP/1.1[0m" 404 -
+123.57.69.121 - - [10/Feb/2023 08:29:39] "[33mGET /www/phpMyAdmin/index.php HTTP/1.1[0m" 404 -
+220.196.160.84 - - [10/Feb/2023 08:29:49] "GET / HTTP/1.1" 200 -
+180.101.245.247 - - [10/Feb/2023 08:29:49] "[33mGET /admin/phpmyadmin/index.php HTTP/1.1[0m" 404 -
+180.101.244.13 - - [10/Feb/2023 08:29:49] "GET / HTTP/1.1" 200 -
+180.101.244.15 - - [10/Feb/2023 08:29:49] "GET /static/main.css HTTP/1.1" 200 -
+180.101.245.253 - - [10/Feb/2023 08:29:49] "GET /static/jquery.min.js HTTP/1.1" 200 -
+59.83.208.107 - - [10/Feb/2023 08:29:49] "GET /static/script.js HTTP/1.1" 200 -
+59.83.208.108 - - [10/Feb/2023 08:29:50] "GET /static/dog.png HTTP/1.1" 200 -
+1.13.138.19 - - [10/Feb/2023 08:29:56] "GET /static/dog.png HTTP/1.1" 200 -
+180.101.245.246 - - [10/Feb/2023 08:30:55] "[33mGET /php_MyAdmin/index.php HTTP/1.1[0m" 404 -
+220.196.160.51 - - [10/Feb/2023 08:36:26] "[33mGET /pmd/index.php HTTP/1.1[0m" 404 -
+115.236.162.162 - - [10/Feb/2023 08:57:37] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:57:37] "GET /static/jquery.min.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:57:37] "GET /static/main.css HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:57:37] "GET /static/script.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:57:37] "GET /static/dog.png HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:57:38] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [10/Feb/2023 08:57:47] code 400, message Bad request syntax ('ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06ÿôÿý\x06')
+127.0.0.1 - - [10/Feb/2023 08:57:47] "[35m[1mÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿýÿôÿý[0m" HTTPStatus.BAD_REQUEST -
+115.236.162.162 - - [10/Feb/2023 08:58:19] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 08:59:10] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:00:38] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:02:01] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:03:21] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:03:31] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:12:07] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:14:18] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:18:20] "POST / HTTP/1.1" 200 -
+220.196.160.151 - - [10/Feb/2023 09:29:08] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:32:49] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:43:07] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 09:45:36] "[33mGET /gen204?invalidResponse=q=https%3A%2F%2Ftranslate.googleapis.com%2Ftranslate_a%2Fsingle%3Fclient%3Dgtx%26s,ql=142,r=,rl=0 HTTP/1.1[0m" 404 -
+115.236.162.162 - - [10/Feb/2023 09:45:36] "[33mGET /gen204?invalidResponse=q=https%3A%2F%2Ftranslate.googleapis.com%2Ftranslate_a%2Fsingle%3Fclient%3Dgtx%26s,ql=147,r=,rl=0 HTTP/1.1[0m" 404 -
+115.236.162.162 - - [10/Feb/2023 09:46:29] "POST / HTTP/1.1" 200 -
+8.219.71.118 - - [10/Feb/2023 11:29:21] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+8.219.71.118 - - [10/Feb/2023 11:29:21] "[35m[1m Pg)§ê [0m" HTTPStatus.BAD_REQUEST -
+8.219.71.118 - - [10/Feb/2023 11:29:30] "GET http://passport.baidu.com/ HTTP/1.1" 200 -
+8.219.71.118 - - [10/Feb/2023 11:29:38] code 400, message Bad request syntax ('\x05\x01\x00')
+8.219.71.118 - - [10/Feb/2023 11:29:38] "[35m[1m [0m" HTTPStatus.BAD_REQUEST -
+91.240.118.187 - - [10/Feb/2023 12:10:07] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+91.240.118.187 - - [10/Feb/2023 12:10:07] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+89.248.163.27 - - [10/Feb/2023 12:39:14] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.163.27 - - [10/Feb/2023 12:39:14] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+220.196.160.84 - - [10/Feb/2023 12:45:55] "[33mGET /sqladmin/index.php HTTP/1.1[0m" 404 -
+128.199.218.170 - - [10/Feb/2023 12:52:17] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x9f')
+128.199.218.170 - - [10/Feb/2023 12:52:17] "[35m[1m {  w'µÎ¡«fUg&$][0m" HTTPStatus.BAD_REQUEST -
+128.199.218.170 - - [10/Feb/2023 12:52:18] code 400, message Bad request version ('À\x14À')
+128.199.218.170 - - [10/Feb/2023 12:52:18] "[35m[1m {  wïwKáxô\Ù¨Ü¹ÚRiÃäZEùÛ:?]\#  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+128.199.218.170 - - [10/Feb/2023 12:52:21] "GET / HTTP/1.1" 200 -
+183.136.225.31 - - [10/Feb/2023 13:33:12] "GET / HTTP/1.1" 200 -
+183.136.225.31 - - [10/Feb/2023 13:33:12] "GET /static/dog.png HTTP/1.1" 200 -
+183.136.225.31 - - [10/Feb/2023 13:33:12] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+1.13.140.20 - - [10/Feb/2023 13:41:15] "GET /static/dog.png HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 13:50:38] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 13:50:41] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 13:50:41] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 13:50:41] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 13:50:41] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 13:52:03] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 13:54:44] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 13:55:05] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 13:56:21] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "GET /static/jquery.min.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "GET /static/main.css HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "GET /static/script.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "GET /static/dog.png HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:11:53] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 14:13:04] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:13:09] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 14:14:34] "POST / HTTP/1.1" 200 -
+1.13.138.225 - - [10/Feb/2023 14:37:44] "GET /static/dog.png HTTP/1.1" 200 -
+180.101.244.16 - - [10/Feb/2023 15:44:28] "[33mGET /phpmyadmin1/index.php HTTP/1.1[0m" 404 -
+115.236.162.162 - - [10/Feb/2023 15:57:13] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:13] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 15:57:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 15:57:13] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 15:57:13] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 15:57:32] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:32] "GET /static/jquery.min.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:32] "GET /static/main.css HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:32] "GET /static/script.js HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:32] "GET /static/dog.png HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:57:33] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+115.236.162.162 - - [10/Feb/2023 15:58:02] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:58:02] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:58:05] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 15:58:33] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 16:00:53] "POST / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 16:02:49] "POST / HTTP/1.1" 200 -
+95.214.55.253 - - [10/Feb/2023 16:05:41] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00')
+95.214.55.253 - - [10/Feb/2023 16:05:41] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+115.236.162.162 - - [10/Feb/2023 16:06:05] "POST / HTTP/1.1" 200 -
+205.210.31.40 - - [10/Feb/2023 16:09:26] "GET / HTTP/1.1" 200 -
+115.236.162.162 - - [10/Feb/2023 16:19:51] "POST / HTTP/1.1" 200 -
+89.248.163.23 - - [10/Feb/2023 16:36:01] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.163.23 - - [10/Feb/2023 16:36:01] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+101.226.140.169 - - [10/Feb/2023 16:40:07] "GET / HTTP/1.0" 200 -
+27.154.120.13 - - [10/Feb/2023 16:40:27] "GET / HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:40:27] "GET /static/main.css HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:40:27] "GET /static/script.js HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:40:27] "GET /static/jquery.min.js HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:40:27] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:53] "GET / HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:53] "GET /static/jquery.min.js HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:53] "GET /static/main.css HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:53] "GET /static/script.js HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:53] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.59.194 - - [10/Feb/2023 16:40:54] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:41:12] "GET / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:12] "GET /static/jquery.min.js HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:12] "GET /static/main.css HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:12] "GET /static/script.js HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:12] "GET /static/dog.png HTTP/1.1" 200 -
+116.169.2.126 - - [10/Feb/2023 16:41:13] "GET / HTTP/1.1" 200 -
+116.169.2.126 - - [10/Feb/2023 16:41:13] "GET /static/jquery.min.js HTTP/1.1" 200 -
+116.169.2.126 - - [10/Feb/2023 16:41:14] "GET /static/main.css HTTP/1.1" 200 -
+116.169.2.126 - - [10/Feb/2023 16:41:14] "GET /static/script.js HTTP/1.1" 200 -
+116.169.2.126 - - [10/Feb/2023 16:41:14] "GET /static/dog.png HTTP/1.1" 200 -
+180.163.28.68 - - [10/Feb/2023 16:41:28] "GET / HTTP/1.1" 200 -
+180.163.28.68 - - [10/Feb/2023 16:41:28] "GET /static/jquery.min.js HTTP/1.1" 200 -
+61.175.197.202 - - [10/Feb/2023 16:41:36] "GET / HTTP/1.1" 200 -
+61.175.197.202 - - [10/Feb/2023 16:41:36] "GET /static/main.css HTTP/1.1" 200 -
+61.175.197.202 - - [10/Feb/2023 16:41:36] "GET /static/jquery.min.js HTTP/1.1" 200 -
+61.175.197.202 - - [10/Feb/2023 16:41:36] "GET /static/script.js HTTP/1.1" 200 -
+61.175.197.202 - - [10/Feb/2023 16:41:36] "GET /static/dog.png HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:37] "GET / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:41:37] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:41:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:41:37] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:41:37] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:42:03] "POST / HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+27.154.120.13 - - [10/Feb/2023 16:42:04] "GET / HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:04] "GET /static/jquery.min.js HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:04] "GET /static/main.css HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:04] "GET /static/script.js HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:04] "GET /static/dog.png HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:05] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+27.154.120.13 - - [10/Feb/2023 16:42:12] "POST / HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:19] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+27.154.120.13 - - [10/Feb/2023 16:42:21] "POST / HTTP/1.1" 200 -
+27.154.120.13 - - [10/Feb/2023 16:42:24] "POST / HTTP/1.1" 200 -
+180.163.28.68 - - [10/Feb/2023 16:42:36] "GET /static/script.js HTTP/1.1" 200 -
+42.236.10.75 - - [10/Feb/2023 16:43:31] "GET / HTTP/1.1" 200 -
+42.236.10.75 - - [10/Feb/2023 16:43:31] "GET /static/script.js HTTP/1.1" 200 -
+42.236.10.78 - - [10/Feb/2023 16:43:31] "GET /static/main.css HTTP/1.1" 200 -
+42.236.10.75 - - [10/Feb/2023 16:43:31] "GET /static/jquery.min.js HTTP/1.1" 200 -
+42.236.10.78 - - [10/Feb/2023 16:43:31] "GET /static/dog.png HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:44:40] "GET / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:44:40] "GET /static/main.css HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:44:40] "GET /static/jquery.min.js HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:44:40] "GET /static/script.js HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:44:40] "GET /static/dog.png HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:49] "GET / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:49] "GET /static/main.css HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:49] "GET /static/jquery.min.js HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:49] "GET /static/script.js HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:49] "GET /static/dog.png HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:44:50] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+27.154.215.37 - - [10/Feb/2023 16:44:54] "GET / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:44:54] "GET /static/main.css HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:44:54] "GET /static/jquery.min.js HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:44:54] "GET /static/script.js HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:44:54] "GET /static/dog.png HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:04] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:07] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:07] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:08] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "GET / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "GET /static/jquery.min.js HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "GET /static/main.css HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "GET /static/script.js HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:09] "GET /static/dog.png HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:45:10] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+218.104.230.10 - - [10/Feb/2023 16:45:23] "POST / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:45:26] "POST / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:45:29] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:45:50] "GET / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:45:50] "GET /static/main.css HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:45:50] "GET /static/jquery.min.js HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:45:50] "GET /static/script.js HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:45:50] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:16] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:18] "GET / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:18] "GET /static/jquery.min.js HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:18] "GET /static/script.js HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:18] "GET /static/main.css HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:18] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:19] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+120.36.252.63 - - [10/Feb/2023 16:46:33] "GET / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:46:33] "GET /static/jquery.min.js HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:46:33] "GET /static/script.js HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:46:33] "GET /static/main.css HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:46:33] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:38] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:51] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:46:56] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:47:00] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:05] "GET / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:05] "GET /static/jquery.min.js HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:05] "GET /static/script.js HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:05] "GET /static/main.css HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:05] "GET /static/dog.png HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:47:16] "GET / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:47:16] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+117.30.230.199 - - [10/Feb/2023 16:47:16] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+117.30.230.199 - - [10/Feb/2023 16:47:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+117.30.230.199 - - [10/Feb/2023 16:47:16] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+120.36.252.63 - - [10/Feb/2023 16:47:18] "POST / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:47:20] "GET / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:47:20] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+218.104.230.10 - - [10/Feb/2023 16:47:20] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+218.104.230.10 - - [10/Feb/2023 16:47:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+218.104.230.10 - - [10/Feb/2023 16:47:20] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+117.30.230.199 - - [10/Feb/2023 16:47:24] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+120.36.252.63 - - [10/Feb/2023 16:47:38] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:47:39] "POST / HTTP/1.1" 200 -
+[2023-02-10 16:47:48,745] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 32, in index3
+    response = openai.Completion.create(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/completion.py", line 31, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 100, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 122, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 329, in _interpret_response
+    self._interpret_response_line(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 362, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.APIError: The server experienced an error while processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if the error persists.
+120.36.252.63 - - [10/Feb/2023 16:47:48] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+218.104.230.10 - - [10/Feb/2023 16:47:49] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+27.154.215.37 - - [10/Feb/2023 16:47:56] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:47:56] "POST / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:47:57] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:47:58] "POST / HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:48:13] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:48:14] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:48:16] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:48:24] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:48:32] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:48:42] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:48:51] "POST / HTTP/1.1" 200 -
+[2023-02-10 16:49:03,663] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 32, in index3
+    response = openai.Completion.create(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/completion.py", line 31, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 100, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 122, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 329, in _interpret_response
+    self._interpret_response_line(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 343, in _interpret_response_line
+    raise error.ServiceUnavailableError(
+openai.error.ServiceUnavailableError: The server is overloaded or not ready yet.
+27.154.215.37 - - [10/Feb/2023 16:49:03] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+120.36.252.63 - - [10/Feb/2023 16:49:37] "POST / HTTP/1.1" 200 -
+27.154.215.37 - - [10/Feb/2023 16:49:49] "POST / HTTP/1.1" 200 -
+117.30.230.199 - - [10/Feb/2023 16:49:52] "POST / HTTP/1.1" 200 -
+120.36.252.63 - - [10/Feb/2023 16:49:57] "POST / HTTP/1.1" 200 -
+175.148.110.81 - - [10/Feb/2023 16:50:46] "GET / HTTP/1.1" 200 -
+175.148.110.81 - - [10/Feb/2023 16:50:47] "GET /static/main.css HTTP/1.1" 200 -
+175.148.110.81 - - [10/Feb/2023 16:50:47] "GET /static/script.js HTTP/1.1" 200 -
+175.148.110.81 - - [10/Feb/2023 16:50:47] "GET /static/jquery.min.js HTTP/1.1" 200 -
+218.104.230.10 - - [10/Feb/2023 16:50:50] "POST / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:52:57] "GET / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:52:57] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:52:57] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:52:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:52:57] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+218.104.230.10 - - [10/Feb/2023 16:53:40] "POST / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:53:56] "POST / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:54:50] "POST / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:59:37] "GET / HTTP/1.1" 200 -
+113.87.116.172 - - [10/Feb/2023 16:59:37] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:59:37] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:59:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 16:59:37] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "GET / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "GET /static/jquery.min.js HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "GET /static/main.css HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "GET /static/script.js HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "GET /static/dog.png HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:00:29] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.87.116.172 - - [10/Feb/2023 17:00:34] "POST / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:01:07] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:01:18] "POST / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:01:31] "POST / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:01:45] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:53] "GET / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:53] "GET /static/jquery.min.js HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:53] "GET /static/main.css HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:53] "GET /static/script.js HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:53] "GET /static/dog.png HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:02:55] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:03:18] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:03] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:03] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:04:03] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:06] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:12] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:21] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:26] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:27] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "GET / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:04:29] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+113.88.13.106 - - [10/Feb/2023 17:04:33] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:47] "POST / HTTP/1.1" 200 -
+113.88.13.106 - - [10/Feb/2023 17:04:57] "POST / HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:44] "GET / HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:44] "GET /static/jquery.min.js HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:44] "GET /static/main.css HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:44] "GET /static/script.js HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:44] "GET /static/dog.png HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:06:45] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:06:59] "GET / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:07:00] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:07:00] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:07:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:07:00] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+122.9.168.182 - - [10/Feb/2023 17:07:00] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+117.160.205.144 - - [10/Feb/2023 17:07:03] "POST / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:07:41] "POST / HTTP/1.1" 200 -
+122.9.168.182 - - [10/Feb/2023 17:08:49] "POST / HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:10:45] "POST / HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:10:52] "POST / HTTP/1.1" 200 -
+117.160.205.144 - - [10/Feb/2023 17:10:57] "POST / HTTP/1.1" 200 -
+207.46.13.136 - - [10/Feb/2023 17:11:58] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+40.77.167.229 - - [10/Feb/2023 17:12:02] "GET / HTTP/1.1" 200 -
+40.77.139.103 - - [10/Feb/2023 17:12:04] "GET /static/main.css HTTP/1.1" 200 -
+40.77.139.103 - - [10/Feb/2023 17:12:04] "GET /static/script.js HTTP/1.1" 200 -
+40.77.139.103 - - [10/Feb/2023 17:12:04] "GET /static/jquery.min.js HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:52] "GET / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:53] "GET /static/main.css HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:53] "GET /static/jquery.min.js HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:53] "GET /static/script.js HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:53] "GET /static/dog.png HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:23:53] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:24:03] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:33] "GET / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:33] "GET /static/main.css HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:33] "GET /static/jquery.min.js HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:33] "GET /static/script.js HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:33] "GET /static/dog.png HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:24:43] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:25:15] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:25:21] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:27:32] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:27:38] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:27:47] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:27:47] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:27:55] "POST / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:28:34] "GET / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:28:34] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:34] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:35] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:35] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:36] "GET / HTTP/1.1" 200 -
+36.248.233.127 - - [10/Feb/2023 17:28:36] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:36] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:36] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:28:37] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+36.248.233.127 - - [10/Feb/2023 17:29:33] "POST / HTTP/1.1" 200 -
+[2023-02-10 17:31:07,814] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 352, in _interpret_response_line
+    data = json.loads(rbody)
+  File "/usr/local/python38/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python38/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python38/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python38/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "app.py", line 32, in index3
+    response = openai.Completion.create(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/completion.py", line 31, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 100, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 122, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 329, in _interpret_response
+    self._interpret_response_line(
+  File "/usr/local/python38/lib/python3.8/site-packages/openai/api_requestor.py", line 354, in _interpret_response_line
+    raise error.APIError(
+openai.error.APIError: HTTP code 502 from API (<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
+36.248.233.127 - - [10/Feb/2023 17:31:07] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+27.149.55.206 - - [10/Feb/2023 17:34:17] "GET / HTTP/1.1" 200 -
+27.149.55.206 - - [10/Feb/2023 17:34:17] "GET /static/jquery.min.js HTTP/1.1" 200 -
+27.149.55.206 - - [10/Feb/2023 17:34:17] "GET /static/script.js HTTP/1.1" 200 -
+27.149.55.206 - - [10/Feb/2023 17:34:17] "GET /static/main.css HTTP/1.1" 200 -
+27.149.55.206 - - [10/Feb/2023 17:34:17] "GET /static/dog.png HTTP/1.1" 200 -
+59.83.208.104 - - [10/Feb/2023 17:48:28] "[33mGET /phpmy/index.php HTTP/1.1[0m" 404 -
+110.82.76.154 - - [10/Feb/2023 17:57:23] "GET / HTTP/1.1" 200 -
+110.82.76.154 - - [10/Feb/2023 17:57:23] "GET /static/jquery.min.js HTTP/1.1" 200 -
+110.82.76.154 - - [10/Feb/2023 17:57:23] "GET /static/script.js HTTP/1.1" 200 -
+110.82.76.154 - - [10/Feb/2023 17:57:23] "GET /static/main.css HTTP/1.1" 200 -
+110.82.76.154 - - [10/Feb/2023 17:57:23] "GET /static/dog.png HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:31] "GET / HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:31] "GET /static/main.css HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:31] "GET /static/script.js HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:31] "GET /static/jquery.min.js HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:31] "GET /static/dog.png HTTP/1.1" 200 -
+211.97.128.120 - - [10/Feb/2023 18:07:32] "[36mGET /static/dog.png HTTP/1.1[0m" 304 -
+223.104.6.1 - - [10/Feb/2023 18:13:38] "GET / HTTP/1.1" 200 -
+223.104.6.1 - - [10/Feb/2023 18:13:38] "GET /static/main.css HTTP/1.1" 200 -
+223.104.6.1 - - [10/Feb/2023 18:13:38] "GET /static/jquery.min.js HTTP/1.1" 200 -
+223.104.6.1 - - [10/Feb/2023 18:13:38] "GET /static/script.js HTTP/1.1" 200 -
+223.104.6.1 - - [10/Feb/2023 18:13:38] "GET /static/dog.png HTTP/1.1" 200 -
+59.83.208.105 - - [10/Feb/2023 18:27:51] "[33mGET /pma/index.php HTTP/1.1[0m" 404 -
+198.235.24.47 - - [10/Feb/2023 18:29:08] "GET / HTTP/1.1" 200 -
+220.196.160.76 - - [10/Feb/2023 18:30:16] "[33mGET /admin/mysql/index.php HTTP/1.1[0m" 404 -
+180.101.244.14 - - [10/Feb/2023 18:30:46] "[33mGET /my/index.php HTTP/1.1[0m" 404 -
+220.196.160.65 - - [10/Feb/2023 18:31:53] "[33mGET /mysql1/index.php HTTP/1.1[0m" 404 -
+117.30.64.136 - - [10/Feb/2023 20:46:56] "GET / HTTP/1.1" 200 -
+117.30.64.136 - - [10/Feb/2023 20:46:57] "GET /static/jquery.min.js HTTP/1.1" 200 -
+117.30.64.136 - - [10/Feb/2023 20:46:57] "GET /static/script.js HTTP/1.1" 200 -
+117.30.64.136 - - [10/Feb/2023 20:46:57] "GET /static/main.css HTTP/1.1" 200 -
+117.30.64.136 - - [10/Feb/2023 20:46:57] "GET /static/dog.png HTTP/1.1" 200 -
+180.101.245.251 - - [10/Feb/2023 20:55:06] "GET / HTTP/1.1" 200 -
+103.20.61.17 - - [10/Feb/2023 20:56:58] "GET / HTTP/1.1" 200 -
+103.20.61.17 - - [10/Feb/2023 20:57:22] code 400, message Bad request version ('À\x14À')
+103.20.61.17 - - [10/Feb/2023 20:57:22] "[35m[1m î  êuÀfç´Bj¼M#ùu;G¸{¼5ÖjÊà oI^ªÇÎ¬ÜddÜ4(0ë íø?ê®*(Ì0# &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+1.13.139.242 - - [10/Feb/2023 21:37:53] "GET /static/dog.png HTTP/1.1" 200 -
